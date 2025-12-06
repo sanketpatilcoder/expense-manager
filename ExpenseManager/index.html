@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager - Home</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+    <nav>
+    <h2>💥 Paisa  Manager</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="add.html">Add Expense</a></li>
+        <li><a href="list.html">View Expenses</a></li>
+        <li><a href="summary.html">Summary</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" onclick="logoutUser()" class="logout-btn">Logout</a></li>
+    </ul>
+</nav>
+
+
+    <section class="hero">
+        <h1>Track Expenses With Pure 🔥 Energy</h1>
+        <p>Premium Store Dashboard • Neon Glow • Beautiful UI</p>
+        <a href="add.html" class="btn">Start Now</a>
+    </section>
+<script src="js/api.js"></script>
+<script src="js/script.js"></script>
+<script>showLoggedUserNameIfAny();</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #1a0033 100%);
+    color: white;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Animated background graphics */
+body::before {
+    content: '';
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 42, 109, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    top: -250px;
+    left: -250px;
+    animation: float 20s infinite ease-in-out;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 234, 255, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    bottom: -200px;
+    right: -200px;
+    animation: float 15s infinite ease-in-out reverse;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(50px, 50px) scale(1.1); }
+}
+
+.form-box {
+    width: 450px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 50px rgba(102, 126, 234, 0.4),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+    animation: pop 0.8s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.form-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.form-box h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 0 0 12px #ff2a6d;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.2);
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+form input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+form input:focus,
+form select:focus {
+    border-color: rgba(255, 42, 109, 0.8);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 0 20px rgba(255, 42, 109, 0.4),
+                inset 0 0 10px rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff2a6d, #ff8c2a);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 42, 109, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.add-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.add-btn:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.add-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(255, 42, 109, 0.6);
+}
+
+.add-btn:active {
+    transform: translateY(-1px);
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0;}
+    to   { transform: scale(1); opacity: 1;}
+}

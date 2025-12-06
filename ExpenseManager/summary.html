@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Summary</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/summary.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>💥 Expense Manager</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="add.html">Add Expense</a></li>
+            <li><a href="list.html">View Expenses</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a class="active" href="summary.html">Summary</a></li>
+        </ul>
+    </nav>
+
+    <section class="container">
+
+        <h1>📅 Monthly Expense Summary</h1>
+
+        <div class="summary-box">
+            <h2 id="month-name"></h2>
+            <h1 id="total-month-expense">₹0</h1>
+            <p>Total Expense This Month</p>
+        </div>
+
+        <h2 class="sub-heading">Category Breakdown</h2>
+        <div id="category-summary"></div>
+
+        <h2 class="sub-heading">Detailed Monthly Expenses</h2>
+        <div id="monthly-list"></div>
+
+    </section>
+
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

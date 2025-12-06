@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Expenses</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/list.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>💥 Expense Manager</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="add.html">Add Expense</a></li>
+            <li><a class="active" href="list.html">View Expenses</a></li>
+            <li><a href="summary.html">Summary</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#" onclick="logoutUser()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="container">
+        <h1>All Expenses</h1>
+
+        <!-- Controls -->
+        <div class="controls">
+            <input id="search" type="text" placeholder="Search..." />
+
+            <select id="filter-category">
+                <option value="all">All Categories</option>
+                <option>Inventory</option>
+                <option>Rent</option>
+                <option>Salary</option>
+                <option>Utilities</option>
+                <option>Sales</option>
+                <option>Other</option>
+            </select>
+
+            <label>From <input id="filter-from" type="date"></label>
+            <label>To <input id="filter-to" type="date"></label>
+
+            <select id="sort-by">
+                <option value="date-desc">Date (newest)</option>
+                <option value="date-asc">Date (oldest)</option>
+                <option value="amount-desc">Amount (high→low)</option>
+                <option value="amount-asc">Amount (low→high)</option>
+            </select>
+
+            <button onclick="clearFilters()" class="btn small">Clear</button>
+        </div>
+
+        <!-- Budget / export -->
+        <div class="controls controls-2">
+            <div id="budget-progress" class="budget" style="display:none;">
+                <div id="budget-total">Spent: ₹0</div>
+                <div class="budget-bar-bg">
+                    <div id="budget-bar" class="budget-bar-fill"></div>
+                </div>
+                <div id="budget-percent" class="budget-percent"></div>
+            </div>
+
+            <input id="budget-amount" type="number" placeholder="Set monthly budget (₹)">
+            <button id="set-budget-btn" class="btn small">Set Budget</button>
+
+            <button id="export-csv-btn" class="btn small">Export CSV</button>
+            <button id="clear-all-btn" class="btn small danger">Clear All</button>
+        </div>
+
+        <div id="expense-list" style="margin-top:20px;"></div>
+    </section>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Expense</h3>
+            <input id="edit-id" type="hidden" />
+            <input id="edit-title" placeholder="Title" />
+            <input id="edit-amount" type="number" placeholder="Amount" />
+            <select id="edit-category">
+                <option>Inventory</option>
+                <option>Rent</option>
+                <option>Salary</option>
+                <option>Utilities</option>
+                <option>Sales</option>
+                <option>Other</option>
+            </select>
+            <input id="edit-date" type="date" />
+
+            <div class="modal-actions">
+                <button id="edit-save-btn" class="btn">Save</button>
+                <button id="edit-cancel-btn" class="btn outline">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

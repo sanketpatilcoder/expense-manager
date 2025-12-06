@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/add.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>💥 Expense Manager</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="add.html">Add Expense</a></li>
+            <li><a href="list.html">View Expenses</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="form-box">
+        <h1>Add Expense</h1>
+
+        <!-- Updated form -->
+        <form onsubmit="saveExpense(); return false;">
+            
+            <input id="title" type="text" placeholder="Expense Title" required>
+
+            <input id="amount" type="number" placeholder="Amount ₹" required>
+
+            <select id="category">
+                <option>Inventory</option>
+                <option>Rent</option>
+                <option>Salary</option>
+                <option>Utilities</option>
+                <option>Other</option>
+            </select>
+
+            <input id="date" type="date">
+
+            <button class="add-btn">Add Expense</button>
+        </form>
+
+    </section>
+
+    <!-- ADD JS FILE -->
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

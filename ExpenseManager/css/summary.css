@@ -1,0 +1,51 @@
+body {
+    background: linear-gradient(135deg, #000, #1a0033);
+    color: white;
+}
+
+.container {
+    width: 900px;
+    margin: 50px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 14px #ff2a6d;
+}
+
+/* Main Summary box */
+.summary-box {
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px #9b00ff88;
+}
+
+.summary-box h1 {
+    font-size: 40px;
+    color: #00eaff;
+    text-shadow: 0 0 15px #00eaff;
+}
+
+/* Category summary */
+#category-summary {
+    margin: 20px 0;
+}
+
+.cat-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Monthly detailed list */
+#monthly-list .expense-card {
+    margin-bottom: 12px;
+}

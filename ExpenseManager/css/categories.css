@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(135deg, #000, #1A0030);
+    color: white;
+}
+
+.container {
+    width: 700px;
+    margin: 70px auto;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #ff2a6d;
+}
+
+/* CATEGORY CARD */
+.cat-card {
+    background: rgba(255,255,255,0.07);
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    /* floating animation */
+    animation: float 4s ease-in-out infinite;
+    transition: .3s;
+}
+
+.cat-card:hover {
+    transform: scale(1.05) translateX(12px);
+    box-shadow: 0 0 18px #00eaff;
+}
+
+@keyframes float {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(12px); }
+    100% { transform: translateX(0px); }
+}

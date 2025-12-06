@@ -1,0 +1,32 @@
+body {
+    background: linear-gradient(135deg, #000, #250040);
+    color: white;
+}
+
+.about-box {
+    width: 700px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px #9b00ff50;
+    animation: float 4s ease-in-out infinite;
+}
+
+.about-box h1 {
+    margin-bottom: 20px;
+    text-shadow: 0 0 12px #ff2a6d;
+}
+
+.about-box ul {
+    margin-top: 15px;
+    line-height: 32px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
